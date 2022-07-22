@@ -1,0 +1,47 @@
+<form (ngSubmit)="insertData()">
+  <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome"  class="form-control" [(ngModel)]="empresa.nome" >
+  </div>
+
+  <div class="form-group">
+    <label for="nome">CNPJ</label>
+    <input type="text" name="cnpj"  class="form-control" [(ngModel)]="empresa.cnpj" >
+  </div>
+
+  <div class="form-group">
+    <label for="endereco">Endereço</label>
+    <input type="text" name="endereco"  class="form-control" [(ngModel)]="empresa.endereco" >
+  </div>
+
+  <button class="btn btn-dark btn-sm mt-4">Enviar</button>
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Endereço</th>
+      <th>Ação</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empresas">
+      <th scope="row">{{emp.id}}</th>
+      <td>{{emp.nome}}</td>
+      <td>{{emp.cnpj}}</td>
+      <td>{{emp.endereco}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="deleteData(emp.id)">Deletar</button>
+
+        <button class="btn btn-warning btn-sm" routerLink="edit/{{emp.id}}">Editar</button>
+      </td>
+    </tr>
+  </tbody>
+
+
+</table>

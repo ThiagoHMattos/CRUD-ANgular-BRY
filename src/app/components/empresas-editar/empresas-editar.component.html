@@ -1,0 +1,20 @@
+<form (ngSubmit)="updateEmpresa()">
+  <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome"  class="form-control" [(ngModel)]="empresa.nome" >
+  </div>
+
+  <div class="form-group">
+    <label for="nome">CNPJ</label>
+    <input type="text" name="cnpj"  class="form-control" [(ngModel)]="empresa.cnpj" >
+  </div>
+
+  <div class="form-group">
+    <label for="endereco">Endereço</label>
+    <input type="text" name="endereco"  class="form-control" [(ngModel)]="empresa.endereco" >
+  </div>
+
+  <button class="btn btn-dark btn-sm mt-4">Atualizar</button>
+</form>
+
+
